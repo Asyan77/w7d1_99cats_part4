@@ -1,0 +1,12 @@
+<h1> Log in here </h1>
+
+<form action="<%= session_url%>"method="POST" >
+    <label for="">Username: 
+        <input type="text" name="user[username]" value="<%= @user.username %>" >
+    </label>
+
+      <%# <label for="">Username: 
+        <input type="text" name="user[age]" value="<%= @user.age %>" >
+    <%# </label> %>
+
+</form>

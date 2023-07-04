@@ -2,13 +2,13 @@
 #
 # Table name: cat_rental_requests
 #
-#  id           :bigint           not null, primary key
-#  cat_id       :bigint           not null
-#  start_date   :date             not null
-#  end_date     :date             not null
-#  status       :string           default("PENDING"), not null
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id         :bigint           not null, primary key
+#  cat_id     :bigint           not null
+#  start_date :date             not null
+#  end_date   :date             not null
+#  status     :string           default("PENDING"), not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 class CatRentalRequest < ApplicationRecord
   # .freeze renders constants immutable
@@ -20,6 +20,7 @@ class CatRentalRequest < ApplicationRecord
   validates :end_date, :start_date, presence: true
   validate :start_must_come_before_end
   validate :does_not_overlap_approved_request
+
 
   belongs_to :cat
 
